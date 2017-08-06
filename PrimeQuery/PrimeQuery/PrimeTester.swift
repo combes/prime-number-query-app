@@ -14,9 +14,11 @@ class PrimeTester {
     var storedPrimes = [Int]()
     static let maxIndex = 1000
     
+    // TODO: The calculation for higher primes will take considerable processing time.
+    // Therefore, this calculation should occur on a background thread with a progress indicator in the UI.
     func primeNumberAt(index: Int) -> Int {
         // Limit index for purpose of this exercise
-        assert(index < PrimeTester.maxIndex, "Max index is \(PrimeTester.maxIndex)")
+        assert(index <= PrimeTester.maxIndex, "Max index is \(PrimeTester.maxIndex)")
         
         // Check cache first
         if (storedPrimes.indices.contains(index)) {

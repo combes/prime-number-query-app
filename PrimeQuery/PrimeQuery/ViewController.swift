@@ -54,11 +54,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // TODO: Shift stack view upward when keyboard becomes visible to accomodate smaller screen sizes.
+    
     // UITextFieldDelegate
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
      
         // Limit text field to numerals only
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+            return true
+        } else if string == "" {
+            // Allow deletion
             return true
         }
         
