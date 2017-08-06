@@ -12,10 +12,18 @@ import Foundation
 
 class PrimeTester {
     var storedPrimes = [Int]()
-    static let maxIndex = 1000
+    
+    /// Maximum prime index allowed
+    static let maxIndex = 4000
     
     // TODO: The calculation for higher primes will take considerable processing time.
+    // Max index in excess of 4000 will take more than a second.
     // Therefore, this calculation should occur on a background thread with a progress indicator in the UI.
+    
+    /// Get the prime number at the specified index.
+    ///
+    /// - Parameter index: Index from 0 to maxIndex
+    /// - Returns: Corresponding prime number
     func primeNumberAt(index: Int) -> Int {
         // Limit index for purpose of this exercise
         assert(index <= PrimeTester.maxIndex, "Max index is \(PrimeTester.maxIndex)")
@@ -45,6 +53,11 @@ class PrimeTester {
         return storedPrimes[index]
     }
     
+    
+    /// Determines if a number is prime or not.
+    ///
+    /// - Parameter number: Number to consider as prime
+    /// - Returns: true if number is prime, false if not
     func isPrime(number: Int) -> Bool {
         
         if number <= 1 {

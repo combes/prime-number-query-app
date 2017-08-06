@@ -84,12 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				83D41B5A1F37AAD600B04FA9 /* AppDelegate.swift */,
+				83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */,
 				83D41B5C1F37AAD600B04FA9 /* ViewController.swift */,
 				83D41B5E1F37AAD600B04FA9 /* Main.storyboard */,
 				83D41B611F37AAD600B04FA9 /* Assets.xcassets */,
 				83D41B631F37AAD600B04FA9 /* LaunchScreen.storyboard */,
 				83D41B661F37AAD600B04FA9 /* Info.plist */,
-				83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */,
 			);
 			path = PrimeQuery;
 			sourceTree = "<group>";
