@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var indexField: UITextField!
+    @IBOutlet weak var primeField: UILabel!
+    
+    var primeTester = PrimeTester()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,45 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func calculate(_ sender: UIButton) {
+        if let index = indexField.text {
+            
+            // Hide keyboard
+            indexField.resignFirstResponder()
+            
+            if let indexValue = Int(index) {
+                if indexValue > PrimeTester.maxIndex {
+                    // Alert user
+                    let alertController = UIAlertController(title: "Error", message: "Max prime index is \(PrimeTester.maxIndex)", preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                        (result : UIAlertAction) -> Void in
+                        self.primeField.text = "?"
+                        self.indexField.text = ""
+                    }
+                    
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    // Calculate this prime
+                    let prime = primeTester.primeNumberAt(index: indexValue)
+                    primeField.text = String(prime)
+                }
+            }
+            
+        }
+    }
+
+    // UITextFieldDelegate
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+     
+        // Limit text field to numerals only
+        if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+            return true
+        }
+        
+        return false
+    }
 
 }
 
