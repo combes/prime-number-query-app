@@ -13,6 +13,10 @@
 		83D41B621F37AAD600B04FA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83D41B611F37AAD600B04FA9 /* Assets.xcassets */; };
 		83D41B651F37AAD600B04FA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D41B631F37AAD600B04FA9 /* LaunchScreen.storyboard */; };
 		83D41B701F37AAD700B04FA9 /* PrimeQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D41B6F1F37AAD700B04FA9 /* PrimeQueryTests.swift */; };
+		83D41B7B1F37AFD200B04FA9 /* PrimeTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */; };
+		83D41B7C1F37AFD200B04FA9 /* PrimeTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */; };
+		83D41B7E1F37B35600B04FA9 /* first_1000_primes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83D41B7D1F37B35600B04FA9 /* first_1000_primes.txt */; };
+		83D41B7F1F37B35600B04FA9 /* first_1000_primes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83D41B7D1F37B35600B04FA9 /* first_1000_primes.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,8 @@
 		83D41B6B1F37AAD700B04FA9 /* PrimeQueryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeQueryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D41B6F1F37AAD700B04FA9 /* PrimeQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeQueryTests.swift; sourceTree = "<group>"; };
 		83D41B711F37AAD700B04FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimeTester.swift; sourceTree = "<group>"; };
+		83D41B7D1F37B35600B04FA9 /* first_1000_primes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = first_1000_primes.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 				83D41B611F37AAD600B04FA9 /* Assets.xcassets */,
 				83D41B631F37AAD600B04FA9 /* LaunchScreen.storyboard */,
 				83D41B661F37AAD600B04FA9 /* Info.plist */,
+				83D41B7A1F37AFD200B04FA9 /* PrimeTester.swift */,
 			);
 			path = PrimeQuery;
 			sourceTree = "<group>";
@@ -90,6 +97,7 @@
 		83D41B6E1F37AAD700B04FA9 /* PrimeQueryTests */ = {
 			isa = PBXGroup;
 			children = (
+				83D41B7D1F37B35600B04FA9 /* first_1000_primes.txt */,
 				83D41B6F1F37AAD700B04FA9 /* PrimeQueryTests.swift */,
 				83D41B711F37AAD700B04FA9 /* Info.plist */,
 			);
@@ -181,6 +189,7 @@
 			files = (
 				83D41B651F37AAD600B04FA9 /* LaunchScreen.storyboard in Resources */,
 				83D41B621F37AAD600B04FA9 /* Assets.xcassets in Resources */,
+				83D41B7E1F37B35600B04FA9 /* first_1000_primes.txt in Resources */,
 				83D41B601F37AAD600B04FA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D41B7F1F37B35600B04FA9 /* first_1000_primes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +211,7 @@
 			files = (
 				83D41B5D1F37AAD600B04FA9 /* ViewController.swift in Sources */,
 				83D41B5B1F37AAD600B04FA9 /* AppDelegate.swift in Sources */,
+				83D41B7B1F37AFD200B04FA9 /* PrimeTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D41B7C1F37AFD200B04FA9 /* PrimeTester.swift in Sources */,
 				83D41B701F37AAD700B04FA9 /* PrimeQueryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

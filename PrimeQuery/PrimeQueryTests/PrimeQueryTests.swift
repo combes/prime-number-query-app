@@ -20,17 +20,60 @@ class PrimeQueryTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func loadTestData() -> [Int] {
+        
+        var data = [Int]()
+        
+        // Load resource file containing test data
+        if let url = Bundle.main.url(forResource: "first_1000_primes", withExtension: "txt") {
+            
+            do {
+                let contents = try String(contentsOf: url)
+                let array = contents.components(separatedBy: CharacterSet.controlCharacters)
+                
+                // Filter empty strings
+                let filtered_array = array.filter({ (item) -> Bool in
+                    if item.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                        return true
+                    }
+                    return false
+                })
+                
+                // Convert array to Integers
+                let mapped_array = filtered_array.map({ (item) -> Int in
+                    let value = Int(item)
+                    return value!
+                })
+                data = mapped_array
+            } catch {
+                print(error)
+            }
+        }
+        
+        return data
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_isPrime() {
+        // Source: https://www.di-mgt.com.au/primes1000.html
+        // Verify the first 1000 primes based on known primes.
+        let data = loadTestData()
+        let primeTester = PrimeTester()
+        for i in data {
+            XCTAssert(primeTester.isPrime(number: i), "\(i) should be prime!")
         }
     }
     
+    func test_primeNumberAt() {
+        // Source: https://www.di-mgt.com.au/primes1000.html
+        // Verify the first 1000 primes based on known primes.
+        let data = loadTestData()
+        let primeTester = PrimeTester()
+        for i in 0..<data.count {
+            let prime = primeTester.primeNumberAt(index: i)
+            let checkPrime = data[i]
+            // Prime number at each index should match
+            XCTAssert(prime == checkPrime, "Prime numbers should match \(prime) != \(checkPrime) at index \(i)")
+        }
+    }
 }
